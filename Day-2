@@ -60,7 +60,7 @@ main()
 name=input("Whats your name")
 if name=="Ali":
      print("Hello")
-elif name=="Ahmed" or name=="shah":
+elif name=="Ahmed" or name=="shah":  # use or in if else     if use or
      print("Hi")
 else:
      print("Hey")
@@ -72,7 +72,7 @@ adress=input("Whats your adress")
 match adress:   #syntax
      case "skp":                       # life if else conditions 
           print("Sheikhupura")         # add 4 spaces for match body and 4 rep case start and end 
-     case "lhr" | "thokar":
+     case "lhr" | "thokar": # use | as a or in match  if we have multiple cases  case use |
            print("Lahore")
      case _: # _ represent any adress
           print("Khin bhi")
