@@ -1,0 +1,223 @@
+# ################DAY1(FUNCTIONS AND VARIABLES)#####################
+
+
+# fun is just like a machine that takes input and perfom work on it and give ouput
+ # print()  is the built in function of python that just print that is passed 
+# in the functon parameters like void print(string a){ cout<<a;}
+print("Hello, World!")
+print(12)
+print("12we")
+print("12")
+
+# input function that take input from user and it have a return data type like 
+# int (string a) {cout<<a ; int var; cin>> var;   return var;}  here we are 
+# not storing the return value 
+input("Enter your name ")
+
+
+# store the return value from input()fun to the varable which is name 
+# name is the variable like a container which helps to store the 
+# data and than use it later if need here not required the data 
+# type in python coz it will figure out the data type when the user
+# enter the data so no need 
+name=input("Enter name ")
+
+
+# show on the screen the data which is stored in the variable name whose type is any 
+print(name)
+
+
+# Python does the type detection for you we dont need to declare it 
+var =input("Enter age ")
+print(var)
+
+
+#it does not means that the python have no data type  
+# we can check it by using the python builtin fun
+print(type(var))
+print(type(name))
+
+
+#if we want to print the name nto on the 
+#seprate line but print like a sentence 
+# then we use the + operator who concatinate
+# join left with right and make it a full sentence
+# 1 method
+data=input("Enter new name ")
+print ("Hello! " + data )
+
+
+# use + operators more than 1 
+print (" concat multiple names------------------Hello! " + data +" "  + name)
+
+#print(*objects, sep=' ', end='\n', file=None, flush=False) 
+# full command of the print function *object means print fun 
+# can recieve one or more things to print  like print("simi","shah",12)
+#sep means separator when print multiple things than we need to add 
+# something between different things like here by default space is added
+#end='\n' tell that what to do at the end move on the next line 
+# but we can override it if we want to print argument and the variable data
+# than we need this to override the end=""
+print("simi","shah",12)
+
+
+# write argument and the var data on the same line by override the end 
+# use two seprate print functions
+# 2 method
+print ("Helo ",end="")
+print(data)
+print ("Helo ",end=" write here to join two lines command ")
+print(data)
+
+
+# 3 method 2 lines  print command in 1 line 
+print("Hi ",data)
+
+
+# paragraph use single course 
+print ('"Hello", friends') # "Hello",friends 
+
+
+# 4 method
+print("Hello,{data}") #print as a para 
+print(f"Hello,{data}") # print the name which is stored in data by using key f tells the python that here is the special string 
+
+
+#remove white spaces from left and right of  the input data if the user enter by mistake 
+# name like this              simi      here we have alot of space on left and right to remoe this 
+# we use this one name.strip()  here name is the object/string and strip is the method/function
+#of the object name and . tell that something belongs to the name(object)
+
+
+city=input("Enter the city name with extra spaces ")
+# remove space from left and right right side work first remove space
+# and than assigning the data without space into the city again
+city=city.strip()
+print (f"City name = {city}")
+
+
+#now i want to capitalized the first letter 
+city=city.capitalize()
+print (f"City name capitalized = {city}")
+
+
+
+# but if the city name is lahore skp   than capitalize method just capital the 
+# lahore not skp than for this we use another method which is title 
+# capitalize evey first letter 
+city=city.title()
+print (f"City name with title method  = {city}")
+
+
+
+# if we want to use tilte and strip method together than syntax1
+adress =input("Enter adress with xtra space and not two word adress without caitalize")
+adress=adress.strip().title()
+print(f"Adress by using strip and title method = {adress}")
+
+
+
+# if we want to use tilte and strip method together than syntax2
+# here first of all right side will be execute take input space removed 
+# capitalize and than assign means copying from left to right 
+adress2 =input("Enter adress2 with xtra space and not two word adress without caitalize").strip().title()
+print(f"Adress by using strip and title method = {adress2}")
+
+
+a=2
+b=1
+c=a+b
+print(f"1+2 ={c}")
+
+
+#input from user 
+x=input("Enter x ")
+y=input("Enter y ")
+z=x+y
+# here when the user enter x and y than it will come from keyboard as a txt not integer
+# so + just concatinate the both not add them x and y treat as s string not int for this we 
+# need type casting  
+print(f" {x} + {y} = {z}")
+
+
+
+
+#input from user 
+x2=input("Enter x2 ")
+y2=input("Enter y2 ")
+# int is not the type it is the python function that 
+# take string in the parameter covenr into the 
+# int  and also known as typecasting from string to int 
+z2=int(x2)+int(y2)
+print(f" {x2} + {y2} = {z2}")
+
+
+
+
+# inner fun return a value which is than pass as an 
+# argument for the outer fun and than assign to q 
+# here we notneed to make z cox q and w are now int 
+# type so we can add them simple q+w
+q=int(input("Enter q "))
+w=int(input("Enter w "))
+print(q+w)# here not used {q}+{w} coz it can print q and w value not sum 
+
+
+val1=input("Enter the float value1 ")
+val2=input("Enter the float value2 ")
+res=float(val1)+float(val2)
+res=round(res) # round of the float value to the nearset big digit 
+print(f"Sum of float after round of  to the near number  {res} ")
+
+
+
+# round off the floating value with comma after 1 digit 
+v1=input("Enter the large float value1 ")
+v2=input("Enter the large  float value2 ")
+res2=float(v1)+float(v2)
+res2=round(res2) # round oddto the nearest value 
+print(f"Sum of float after round of with comma  to the near number  {res2 :,} ")# add comma 
+
+
+
+# float division 
+dig1=float(input("Enter dig1 for division "))
+dig2=float(input("Enter dig2 for division "))
+r= dig1/dig2
+print (f"Division of dig1 with dig2 {r:.2f}")# just show after point two digits
+
+
+# userdefined void/printing functions 
+def main():                 # deine main function it will just read not print 
+    n=input("Enter name ")  #Python uses spaces to understand which lines belong to that fun(start and end of fun)
+    pt(n)                   # pass n as a parameter to pt function 
+
+def pt( name="world"):       # define function with one parameter and also default name 
+    print(f"Hello {name}")   # print name 2 method  print("Hello", name)
+
+main()              # exectution start from main  and than move to the main then pt and print name 
+
+
+
+
+
+def maain():
+    n=int(input("Enter value to get square "))
+    n2=square(n)
+    print(f"Square of entered value {n2}")# 2syntax   print(f"Square of entered value",square(n2))
+
+def square( n ):
+    return n*n
+
+maain()
+#########################################END##########################################################
+
+
+
+
+
+
+
+
+
+
