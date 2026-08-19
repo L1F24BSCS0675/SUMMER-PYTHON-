@@ -1,0 +1,118 @@
+# ################DAY3 (LOOPS)#####################
+
+
+# WHILE LOOP
+i=3
+while i!=0:
+    print("while loop")  # four blank spaces who tell start and end of loop 
+    i -=1     # i-- is not use in python 
+
+
+# FOR LOOP
+# when we know the exact count to print how many times 
+for i in[0,1,2]:                #[0,1,2]  is the list 
+       print("list")
+    
+
+# 2 method
+# i variable is not used it will show just iteration so there is no nedd of i later repace it with _
+for _ in range(5):       # range is the builtin fun of python who return value 5 than 4 than 3 so on in case of a bigger value 
+       print("range")
+
+#3 method 
+print("Hey"*3)# print hi three times but without seprate hihihi
+# print hi than add one line than again hi nxt line hi nxt line and in the print  syntax it will also add
+# extra line so to avoid extra line override the print end 
+print("Hello\n "*3)
+print("Hi\n"*3,end="")
+
+#BEST WAY IS TO USE RANGE LOOP
+
+
+
+#while loop with userdefinedfun
+def main():
+     num=get()
+     prt(num)
+
+def get():
+    while True:# 4 spaces of the get fun
+        n=int(input("Enter the range ")) # 4 spaces of get+ 4 spaces of while loop
+        if n > 0:                   #4 spaces of get+ 4 spaces of while loop
+             break                  #4 spaces of while +4 spaces of get fun + 4 for if body
+    return n                        # part of get fun body not the while and if thats why 4 spaces 
+
+def prt(n):
+     for _ in range(n):
+          print("Meow")
+
+main()# call the functions 
+
+
+
+#LISTS ARE LIKE AN ARRAY BUT LISTS STORE DIFF TYPE OF DATA
+students=["Ali","qwe","qasd"]
+for std in students:
+  print (students)  #students print the whole list 3 times
+
+## 1 method to print a list 
+students=["Ali","qwe3","12"]
+for i in students:# means i=students[0]---- i=students[1]  and the students first pick 0 index name than 2 and than 3 like increment 
+  print (i)  #i print the every list 1 time 
+
+
+## 2 method to print a list
+students=["Ali","qwe","qasd"]
+for i in range(len(students)):#range have just int value so use builtin len fuction who return the length3 of the list
+  print (students[i])
+
+    
+##print top threse students with counting on left 1 2 3 
+students=["Ali","qwe","qasd"]
+for i in range(len(students)):
+  print (i+1,students[i])
+
+  
+  ##DICTIONARY {} is a collection of keys with words
+  # student={"Ali":"lahore","Abay":"skp","harry":"fbd"}
+students={"Ali":"lahore",    # 4 spaces wo tell start and end of the dictionary body
+         "Abay":"skp",
+         "harry":"fbd"}
+#print the dictionary with loop
+for i in students:
+    print(i,students[i])  # i is the key i= Ali then abay and then harry # print(i,students[i],sep="-")  override print 
+
+
+# syntax 2 to print dictionary eithout using loop
+print(students["Ali"])
+print(students["Abay"])
+print(students["harry"])
+
+
+## LIST CONTAINING DICTIONARIES [] reresents list {} represents dictionary 
+#EVERY STUDENT HAVE A SEPRATE DICTIONARY INSIDE THE LIST OF STUDENTS 
+students=[ 
+     {"name":"simi","adress":"skp","rollno":"12"},   # 4 spaces  # dic 1 
+     {"name":"shah","adress":"lhr","rollno":None}   # dic 2 # None N always capital and none for not given value 
+]
+
+for i in students:
+    print(i["name"],i["adress"], sep ="----") # find key and print its word 
+# here i is the dictionary itself in first iteration i={"name":"simi","adress":"skp","rollno":"12"}
+# and then the 2 iteration and then i =  {"name":"shah","adress":"lhr","rollno":None} 
+
+
+#### NESTED LOOP FOR PATTERN TO PRINT SQUARE OF 3 BY 3
+
+def main():
+    p_row(3)
+
+def p_row(n):
+    for i in range(n):  # print row 
+        for j in range(n):  # print column 
+            print("*",end="") # override the end="backlacsh n"
+
+        print() # print new line # part of outer for loop 8 spaces not 4 
+
+main()
+        
