@@ -1,0 +1,39 @@
+# ################DAY4 (EXCEPTIONS)#####################
+
+try:
+    x=int(input("Whats x "))
+except ValueError:             # V and E must be capital 
+    print("X is only integer ")
+else:  # if no value error come than line 3 4 7 8 execute if error occur than line 3 4 7 8 will execute
+    print(f"Value of x {x}")
+
+##### INFINITE WHILE LOOP 
+
+while True:
+    try:
+        x=int(input("Whats x "))
+    except ValueError:             # V and E must be capital 
+        print("X is only integer again enter ")
+    else:
+        break
+
+print(f"Value of x {x}")
+
+
+
+###FUNCTION with try except pass#####
+def main():
+    a=getv()
+    print(f"Value of x {x}")
+
+
+def getv():
+    while True:
+        try:
+            return int(input("Whats the value of x  "))
+        except ValueError:             # V and E must be capital 
+            pass   # it can move again the fun like continue
+
+
+main()
+
