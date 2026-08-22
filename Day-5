@@ -1,0 +1,36 @@
+
+# ################DAY5 (LIBRARIES)#####################
+# Random is a module who have alot of functions 
+# module is like a library i.e # include<iostream> import 
+# is the keyword and choice is the function of the random 
+# library [head,tail] are the two lists passed into the 
+# choice fun of library and this fun return the random may 
+#be head or may be tail python perform math for us 
+import random  # Bring the random library into my program so I can use it like #include <iostream>
+coin= random.choice(["head","tail"]) #picks one item from this list randomly
+print(coin)
+
+
+
+# from random module import only choice funvtion 
+from random import choice
+coin=choice(["head","tail"])
+print(coin)
+
+
+
+
+number= random.randint(1,10) #pick the random  whole number ve+,-ve but not decimal including 1 and 10 
+print(number)
+
+#shuffle string like a cards
+cards=["king","queen","jack"]
+random.shuffle(cards) # shuffle cards  chage the order of the list 
+for i in cards:
+    print(i)
+
+# average function pass a list and it includes in the statistics module 
+import statistics
+ans=statistics.mean([100,80,90,50,40,30])
+print(f"Average {ans}")
+
