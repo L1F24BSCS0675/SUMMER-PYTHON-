@@ -1,0 +1,32 @@
+
+# ################DAY5 (FILE I/O)#####################
+
+namel=[]
+for i in range(2):  # i=0,i=1
+    namel.append(input("Whats your name?")) # append add something at the end of list 
+
+
+
+for name in sorted(namel):   #sort the data 1 method 
+    print(f"Hello {name}")
+
+
+namel=sorted(namel)  # sort the data 2 method 
+for name in namel:
+    print(f"Hello {name}")
+
+    # file is like a varaible open get the any object file and than store it in the file variable
+    # than with the help of file we are able to perform the operations 
+
+
+name=input("Whats your name ")
+file=open("names.txt","w") # create a file whose name is the names.txt and w means write 
+file.write(name)  #every time it will override the prev name 
+file.close()
+
+
+
+nam=input("Whats yuor good name") #every time it will store the names at the bottom of prev name 
+file=open("appendfile.txt","a")
+file.write(f"{nam} \n")  # add next name on the new line 
+file.close()
