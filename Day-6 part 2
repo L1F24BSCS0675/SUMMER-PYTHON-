@@ -1,0 +1,35 @@
+
+# ################DAY6 (FILE I/O)#####################
+
+#sometimes we forget to close the file so we use another method with (it will autometically open and close the file )
+
+
+nam=input("Whats yuor good name") 
+with open("people.txt","a") as fout:
+    fout.write(f"{nam} \n")  
+
+
+
+#readlines() file ki har line ko read karke ek list banata hai.
+#lines = ["Ali\n", "Sara\n", "Ahmed\n"]
+# lines= ["Ali\n", "Sara\n", "Ahmed\n"] → variable ke andar stored value
+
+## read all the file and then print its full list 
+with open("people.txt","r") as fin:  # r to read from the file 
+    lines=fin.readlines()   # read lines and line is the list 
+for line in lines:
+    print(f"Hello {line}",end="")  # read from the  file also add the backslach n so to avoid extra line override the print 
+
+
+
+## directly print after reading one line 
+age=input("Whats yuor age") 
+with open("peopleage.txt","a") as fot:
+    fot.write(f"{age} \n")  
+
+with open("peopleage.txt","r") as finn:
+    for ageline in finn:   #It reads one line at a time and prints it immediately. It does NOT read all lines first. and read until the inputnot stop from file 
+        print(f"Age {ageline}", end="")
+
+        
+
