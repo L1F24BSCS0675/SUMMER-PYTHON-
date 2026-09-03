@@ -1,0 +1,57 @@
+
+# ################DAY6 (FILE I/O)#####################
+
+names=[]
+with open("people.txt","r") as fin:
+    for line in fin: # it means here fin have full list of the names and than the for loop start 
+        names.append(line.rstrip())  # rstrip remove extra line 
+
+names=sorted(names) # sort names 
+for name in names:
+    print(f"Helo  {name}")
+
+
+# without variable sort the names 
+with open("people.txt","r") as files:
+    for nam in sorted(files): #now file have all names first names are sorted and then the for loop  works
+        print(f"Hello 22 {nam.rstrip()}",)
+
+
+# if we want to sort in reverse order than
+with open("people.txt","r") as fnn:
+    for na in sorted(fnn,reverse=True): #now file have all names file become like a list first names are sorted and then the for loop  works
+        print(f"Hello reverse  {na.rstrip()}",)
+
+######################################################
+#A CSV file is a type of file used to store data in rows and columns, like a table in Excel.
+#CSV = Comma-Separated Values
+# want to store the names and the adress of the students
+# first of all like that file read noun = "Ali,CS\n" .rstrip remove extra line and then
+# split function find coma and than cut it where the comma find into two parts then 
+#row = ["Ali", "CS"] this is the list row[0] → "Ali"----------row[1] → "CS"
+with open ("Std.csv","r") as file:
+    for noun in file:
+        row=noun.rstrip().split(",")# remove extra line and then split by comma in left or right
+        print(f"{row[0]} is in {row[1]}")
+
+
+
+#############################################################
+with open("Std.csv","r") as files:
+    for names in files:
+        n,house=names.rstrip().split(",")# use two variables to store data 
+        print(f"NAME {n}, HOUSE {house}")
+
+
+
+# read name and city from csv file split and store in two variables and then append 
+# a complete sentence into a sentence list and than sort and print them 
+sentence=[]
+with open("Std.csv","r") as fout :
+    for adress in fout:
+        a,b=adress.rstrip().split(",")
+        sentence.append(f"{a} is in {b}")
+
+for script in sorted(sentence):
+    print(script)
+
