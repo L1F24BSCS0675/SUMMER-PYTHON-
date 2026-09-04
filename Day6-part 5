@@ -1,0 +1,33 @@
+
+# ################DAY6 (FILE I/O)#####################
+#  datacontain like that  simi,skp lahore we use
+# reaer fun of csv module who read the comma data 
+import csv
+
+students=[]
+
+with open("Std.csv","r") as fin:
+    reader = csv.reader(fin)# read all student names and adress
+    for name,home in reader:
+        students.append( {"name":name,"home":home})
+
+def gethome(student):
+    return student['home']
+
+for std in sorted(students,key=gethome):
+    print(f"{std['name']} is from {std['home']}")
+
+###############################################################################
+#Create a CSV writer that can write data into this file
+#writer is basically our CSV writing tool
+#CSV module knows the comma inside "Ali, Shah" is part of the name so it can write something like
+#"Ali, Shah",Lahore and when you read it back we correctly get ["Ali, Shah", "Lahore"]
+
+import csv    
+name=input("Whats your name")
+home=input("whats your home")  # input enter    skp,lahore  than it will autometically double quote in the csv file like this "skp,lahore"
+
+with open("Commafile.csv","a") as fout:
+    writer=csv.writer(fout) #writer is the csv writer 
+    writer.writerow([name,home]) # write a row 
+
