@@ -1,0 +1,33 @@
+
+# ################DAY6 (FILE I/O)#####################
+
+# create a list of students dictionary read from file names and houses
+# split them by comma store into the name and house variable and 
+#than create an empty dictionary where at the key of name and house 
+#store the name and house and then append it in the students list 
+#and print then not with the help of digit it can be access by the 
+# key name and single quote is used for key coz we already use the
+# double quote for print fun
+students= []
+
+with open ("Std.csv","r") as fin:
+    for line in fin:
+        name,house=line.rstrip().split(",")
+        student={} # 2 syntax student ={"name":name,"house":house} in place of 16 17 18 line 
+        student["name"]=name
+        student["house"]=house
+        students.append(student)
+
+def getname(student): # here student is the 1 dictionary of 1 student
+    return student["name"]
+# python allow to use a fun in the parameter of other fun like here getname fun into sorted fun
+# sorted is just saying give me a fun than sorted fun itself call the getname(student) fun on each dictionary 
+# we just give the name as a parameter 
+#you normally call a function with (), but when a function is being
+#  passed as an argument to another function, you often pass its name without ()
+## sort the students according to theor name not on the base of house
+for student in sorted(students,key=getname,reverse=True):
+    print(f"{student['name']} is in {student['house']}")
+
+
+
