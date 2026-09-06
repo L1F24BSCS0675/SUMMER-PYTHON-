@@ -1,0 +1,23 @@
+
+# ################DAY7 (REGULAR EXPRESSIONS )#####################
+# regular expression is used to find email or anything else in a string
+
+
+# like check the validation of the email but here it will say valid if the email
+# is just @. may be username missing but this logic say valid 
+# if condition check @ in the str of email may be instart mid and end it will autometically 
+# check in the email str
+email=input("Enter email ")
+if "@" in email and "." in email:
+    print("valid")
+else:
+    print("invalid")
+
+
+
+email2=input("Enter a new email ")
+username,domain=email2.split("@") # split domain and name where the @ in two parts 
+if username and domain.endswith(".edu"):# check endswitch fun take .edu as a parameter and check  domain contain the .edu at end if yes fun return true 
+    print("valid")
+else:
+    print("invalid")
