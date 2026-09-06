@@ -47,3 +47,39 @@ if re.search(r"^.+@.+\.edu$",input):# search(pattern,string,flags=0) syntax of s
     print("VALID")
 else:
     print("INVALID") 
+
+
+
+
+
+
+
+
+
+
+## outside ^ represent to match the start of string and then [^@] means every letter except @
+# than + means more things like that  and then same on the right side than backslach here just to
+# keep difference from the regex  and .edu$  means maatch the end of string with this and 
+# outside r is used to say python that backslach is used as a simplesign not used in the regex
+import re
+input2=input("Enter a new email for double at the rate ")
+if re.search(r"^[^@]+@[^@]+\.edu$",input2):# but it still invalide for .edu@123.edu 
+    print("VALID")
+else:
+    print("INVALID")
+
+
+
+######### use set of characters 
+# if we want to include only alphabets and digits the syntx in the 
+# square bracket is just to write the range like a-z in place of writing
+# all the letters and if we want to add also digits than dont add the space 
+# and write the counting range after that and if you want to include the underscore
+# then the same rule is for that just write it after the other ranges without any space 
+import re
+inp=input("Enter an email for the restricted input just alphabets and the digits ")
+if re.search(r"^[a-zA-Z0-9_]+@[a-zA-Z0-9_]+\.edu$",inp):
+    print("Valid")
+else:
+    print("invalid")
+
