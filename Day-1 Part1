@@ -21,3 +21,29 @@ if username and domain.endswith(".edu"):# check endswitch fun take .edu as a par
     print("valid")
 else:
     print("invalid")
+
+
+
+
+#    . represent any char but not include new line 
+#     + represents the multiple time 1 or more repitions
+#     simi@1234.edu here expression says that there is @ on its left side we have some alphabets . 
+#     represent alphabets and + represent the one or more char same on the right . + and the /.edu  
+#    / is used to seprate them from . + operators and / have a hint that after that we have something to match
+#    r is used for the purpose that in our expression it will not interept
+#      + represent simi * represent the multiple char simi here 4 char
+#     r tells dont  treat backslashes \ as Python escape characters Keep them as they are
+#    and  / tells to  Treat the next character normally not as a special regex symbol
+#     coz backslash also used by itself regex
+#    ^ carrot sign match the start of the string  ^simi
+#    $ match the end of the string   simi$
+#    START → something → @ → something → .edu → END.  re.search(r"^.+@.+\.edu$",input)
+#  if the user enter simi@@@123.edu than out code say it is valid but its not 
+# thats ehy i ma using []  set of characters if we want to enter just these letters [abs]   and  
+#   [^] complement the set we want not that letter [^123]
+import re
+input=input("Enter a newwwww email ")
+if re.search(r"^.+@.+\.edu$",input):# search(pattern,string,flags=0) syntax of search fun 
+    print("VALID")
+else:
+    print("INVALID") 
