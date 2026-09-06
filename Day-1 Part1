@@ -83,3 +83,20 @@ if re.search(r"^[a-zA-Z0-9_]+@[a-zA-Z0-9_]+\.edu$",inp):
 else:
     print("invalid")
 
+
+
+
+
+
+
+
+######################################################################
+# replace [a-zA-Z0-9_] with \w   this is the alphanumeric symbol in regex it include all alphabets digits and underscore 
+# if we have double dots in the input than we use (\w+\.)?  after the split @ \w says more letter + more and \. is just matcing in the string 
+# ? represents that only 0 or 1 repetition of that bracket data 
+import re
+inp=input("Enter your email like simi5@shah.123r.edu   ")
+if re.search(r"^\w+@(\w+\.)?\w+\.edu$",inp,re.IGNORECASE):# syntax IGNORECASE
+    print("Valid")
+else:
+    print("invalid")
