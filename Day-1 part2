@@ -1,0 +1,63 @@
+ 
+# remodule 1 fun re.search("pattern","string",flag=0)
+#   2 fun re.sub("pattern",repl,string, count=0.flag=0)
+# # if the user enter the last name than comma and space may or may not  and last name 
+# ? it is used for 0 or 1 repitiotion of space  () are used for capturing
+# when user enter name in last, first name then
+# capture values keep in the () and then the matching value go in the match 
+# if we have 0 or more repition on single alpha write like this s?  if a group than (www)?
+# * + ? () capturing version 
+#  (|)  \ . ^ $ r (?) noncapturing version 
+import re 
+
+name = input("Enter name ")
+
+match = re.search(r"^(.+), (.+)$", name) # shah, simi  we wnat to capture first and last name thats why(.+)
+
+if match:
+    last, first = match.groups()
+    name = f"{first} {last}"
+    print(f"Hello {name}")
+
+############2 syntax###########################
+
+   #=match.group(1)
+   # first=match.group(2)
+   # name2 = f"{first} {last}"
+
+#######3 syntax############################
+
+# name=match.group(2) + " " + match.group(1)
+
+
+##########################################################################
+# if we want to get from the URL username like https://twitor/simishah
+# here i dont need to use the search fun cox we know the name is at the last position so 
+# i should simply replace the start of the name 
+
+url=input("Enter url https://twitor/simishah ")
+user=url.replace("https://twitor/","")## replace("replced string","replace with")
+print(f"username {user}")
+# but still here we have an error like if the user enter the 
+# this is my url  https://twitor/simishah     output : this is my url simi shah
+# but i just want name not the sentence this is my url not so its still the code is incorrect
+
+###############################################
+# here i=s an error ar twitor.com  in  re.sub(r"^https://twitor.com/","",url2)
+# coz . is used both in symbols and in regex so we use backslach with . 
+# and httpand https both are used thats why add question mark after s 
+# and sometimes https:// is optional so use ? (|)   itise user as an or 
+# may be it is written or not thats why i am using | with https and on the other side nothing
+
+
+# this code still not work for https://www.google.com 
+#url2=input("Enter the url2 this is my url https://www.twitor.com/simishah")
+# re.sub(r"^(https?://)?(www\.|)?twitor\.com/","",url2) # re.sub("pattern",repl,string, count=0.flag=0)
+
+url2=input("Enter the url2  http or https ://www.google.com/simishah  ")
+match=re.search("^https?://(www\.)?twittor\.com(.+)$",url2)# .+ is used for username we want to capture that 
+# here two brackets are present (www\.) and (.+)   both are captured
+print(f"USERNAME:", match.group(2))
+
+
+
