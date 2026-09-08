@@ -1,0 +1,77 @@
+# ()--->tuple []--->list   {}--->dict
+# # tuple is the collection of values like  tuple with two elements->
+# (name,home)  but tuple values cant be changed  immutable
+# but list [name,home]  values are mutable means are able to change 
+
+
+#class is a blueprint that allow the user to create its own objects and the datatypes
+# __initi__  is used in the class to store variables yeh ek special method h jbh hum 
+# object student1 = Student("Ali", 20)  create  krte hn to __initi__ autometically run hota h 
+#Student=blueprint object 
+#Student=blueprint
+# std=Student(name,home)
+# self current object ko represenr krta h jo bhi constructor ko call krta h like this 
+#self.name=name<------>std.name=name
+
+class Student:
+
+    def __init__(self, name, age):# initialize the content of the obj # self is the current calling object    
+        self.name = name  # 4 spaces of class and 4 of fun #object attribute
+        self.age = age  #object attribute
+
+
+    def __str__(self):
+            return(f"{self.name} has {self.age} age.")
+
+    
+# @property → controls getting/reading the value
+    @property   # used to access the atribute of the class when call getname than dont need to use ()
+    def name(self): #getter
+        return self._name
+ 
+#@age.setter → controls setting/changing the value
+#when the atribute and property both have the same names then use ._ represent 
+#age             → the value coming into the function
+#self._age       → where we store that value
+# age = property
+# _age = internal stored value
+# when we write std.age=12  then autometically the setter fun is called and we dont need to call it manually 
+# when the fun run and go on the line 38 if we write self.age=age then here we say std.age=12  when this line 
+# is written then the setter is called self.age=age  is the same syntax so again the setter fun is called
+# and infinite loop is called thats why we write the self._age=age so that again infinite loop is not run thats 
+# the purpose of the _age 
+# imp point is that the order of getter and seteer must be true like first getter than setter fun  setter and 
+# setter fun name must same in getter and setter with the atribute otherwise error
+# here getter and setter work in conjunction getter and setter have same names 
+#     self._age=age        its just like        this->self.age=age in c++
+
+    @name.setter
+    def name(self,name): #setter
+        self._name=name  ### here the setter fun is again called   self.age=12 is the syntax  thts whyt use the self._age=age 
+
+  
+
+    
+
+student1 = Student("Ali", 20)# constructor create an objectand call the __init__(self,name,age)
+student1.age=19    # acess the atribute of the class and than change its value
+print(student1)
+#print(student1.name)
+#print(student1.age)
+
+std=Student("Simi",56)
+print("Second std name by using getter fun ",std.name) # call the std.name()  but dont use () coz of @property
+# setter is used to get control over and the user dont change the value like std.age=89
+##if we try to print an object of the class than it will show an error
+##thats why a __str__ fun is created inside the class that is autometically called when 
+# the student object is tried to print and it just return the string
+#__str__ Python class ka special method hai jo batata hai ke jab hum object
+#  ko print() karein, to object ko kis form mein display karna hai
+# Agar __str__ na ho
+# <__main__.Student object at 0x000001...>
+#Kyunkay Python ko nahi pata ke Student object ko human-readable form mein kaise show karna hai
+
+
+
+# if we want to use @property  above the fun then when we call it like simi not simi()  () are not required
+# and it is used when we access the data members 
