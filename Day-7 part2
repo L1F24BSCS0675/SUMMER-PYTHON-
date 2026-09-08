@@ -1,0 +1,109 @@
+print(type(12))
+
+print(type("Heelo i am string"))
+
+print(type(()))
+
+print(type({}))
+
+print(type(list()))
+
+print(type([]))
+
+#### create a class hat who stores the list of houses and call the default const 
+### __init__(self) <---> default constructor   __init__(self,name,age)<--->paramerterized const
+import random 
+class Hat :
+    def __init__(self):
+        self.houses=["QW","RE","SJ","SZ"]
+
+    def sort(self,name):
+        print(name,"lives in ",random.choice(self.houses))
+
+
+
+ht1=Hat() # default constructor coz no parameter
+ht1.sort("Simi")
+
+
+
+import random 
+class Hat :
+    
+    houses=["QW","RE","SJ","SZ"]  # class atribute 
+
+    @classmethod  #Yeh function object ke liye nahi, balkay class ke liye hai. islie ise class k name k sath call kia ghya h Hat.sort()  object nhi bhnayea
+    def sort(cls,name):  # cls is the class we use cls coz it will collide with the main class dont use self coz in self they are instance variable but here these are the variables of the class itself  variable that belongs to a particular object (instance) of a class.
+        print(name,"lives in ",random.choice(cls.houses))
+# instace varables use with self and cls used with class fun 
+# Hat class ke andar jo sort function hai, usko chalao.
+#cls=Hat when the sort fun is called Hat.sort("Simi")  then at the backend fun will call
+# like this sort(Hat,"simi")
+Hat.sort("Simi")   # here no need to use data type directly the class call the sort fun
+
+############################################################################
+#######INHERITANCE##########
+
+
+# wizard class is the super class and the student and profesor class is inherited from 
+# student and the professor class   super().__init__(name)   means super tells that 
+# find its parent wizard is the parent then wizard.__init__(name)  super take place of
+# the wizard and then the wizard __init__ fun is called 
+# we inherit just coz of the name also include in student and also in the prof and also in 
+# wizard so to avoid redundency we inherit both woth wizard so now we dont need to assign name 
+# seprately in both student and proffessor class
+class Wizard:
+    def __init__(self,name):
+        self.name=name
+
+class Student(Wizard):            #student inherit from wizard it means student can use things from wizard
+    def __init__(self,name,home):  
+        super().__init__(name)
+        self.home=home
+
+class proffesor(Wizard):         #professor inherit from wizard
+    def __init__(self,name,sub):
+        super().__init__(name)
+        self.sub=sub
+
+wz=Wizard("Ali")
+# first of all the student obj is created then go inside at line 57 from here it will call wizard.__init__(name)   fun 
+#  and go on the line 53 and call the init fun of the wizard class after assigning name at line 54 come 
+# back on the line 59 and assign the home 
+std=Student("Simi","skp")
+prof=proffesor("Shah","maths")
+
+
+print(std.name)
+print(std.home)
+
+print(prof.name)
+print(prof.sub)
+
+print(wz.name)
+
+
+
+class Vault:
+    def __init__(self,a,b,c):
+        self.a=a
+        self.b=b
+        self.c=c
+
+    def __str__(self):
+        return f"{self.a},{self.b},{self.c}"
+
+
+    def __add__(self, other):   # operator overload of +
+        newa = self.a+other.a
+        newb = self.b+other.b
+        newc =self.c+other.c
+        return Vault(newa,newb,newc)    # new obj is created and the para constructor run here 
+
+
+
+
+v1=Vault(1,2,3)
+v2=Vault(11,22,3)
+total=v1+v2
+print(total)
